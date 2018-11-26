@@ -31,7 +31,11 @@ constructor(private heroService: HeroService) { }
     this.getHeroes();
   }
   getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
+    // this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes()
+      // .subscribe(heroes => this.heroes = heroes);
+      // .subscribe(heroes => this.heroes = heroes.slice(1, 5));
+      .subscribe(heroes => this.heroes = heroes);
     console.log(this.heroes);
   }
 }
